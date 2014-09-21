@@ -1,0 +1,20 @@
+{
+	"name": "antonseroshtan.ru",
+	"version": "0.0.1",
+	"homepage": "https://github.com/njif/antonseroshtan.ru",
+	"authors": [
+		"Anton Seroshtan <anton.seroshtan@gmail.com>"
+	],
+	"description": "personal site",
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"components-bootstrap": "~3.2.0"
+	}
+}
