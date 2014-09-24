@@ -26,15 +26,16 @@
     margin-right: -0.25em;
 }
 
-.frontend-developer__header .wrapper {
+.frontend-developer__headerwrapper {
     position: relative;
 	display: inline-block;
     vertical-align: middle;
 	padding: 10px 20px;
+	border-radius: 3px;
 	background: radial-gradient(circle farthest-side, rgba(0,0,0,0.05) 100%, rgba(0,0,0,0.2) 0%);
 }
 
-.frontend-developer__header .wrapper:hover {
+.frontend-developer__headerwrapper:hover {
 	cursor: pointer;
 	background: radial-gradient(circle farthest-side, rgba(0,0,0,0.2) 100%, rgba(0,0,0,0.2) 0%);
 }
