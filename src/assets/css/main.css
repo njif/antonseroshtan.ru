@@ -1,0 +1,270 @@
+/* --- MIXINS --- */
+.inlineblock {
+  /* --- mixin: .inlineblock: --- */
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1 !ie;
+  /* --- /.inlineblock: --- */
+}
+.clearfix {
+  /* --- mixin: .clearfix: --- */
+  *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
+  zoom: 1 !ie;
+  /* --- /.clearfix: --- */
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*  ==========================================================================
+	General - Setting up some base styles
+	========================================================================== */
+body,
+html {
+  height: 100%;
+  max-height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto-Regular';
+  color: #ffffff;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+.maincontent {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 0%;
+  -webkit-transition: top 1s;
+  -moz-transition: top 1s;
+  -ms-transition: top 1s;
+  -o-transition: top 1s;
+  transition: top 1s;
+}
+::-moz-selection {
+  background: #D6EDFF;
+}
+::selection {
+  background: #D6EDFF;
+}
+/* Clears */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+a {
+  color: #fff;
+  transition: color ease 0.3s;
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*  ==========================================================================
+	Navigation
+	========================================================================== */
+.main-nav {
+  position: relative;
+  padding: 35px 40px;
+  margin: 0 0 30px 0;
+}
+.email-button {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  float: right;
+  height: 38px;
+  padding: 0 20px;
+  border: transparent 1px solid;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 35px;
+  white-space: nowrap;
+  border-radius: 3px;
+  transition: all ease 0.3s;
+}
+.email-button:before {
+  font-size: 9px;
+  margin-right: 6px;
+}
+/* Special styles when overlaid on an image*/
+.main-nav.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  border: none;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.email-button {
+  border-color: #fff;
+}
+.main-nav.overlay a:hover {
+  color: #222;
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.1s ease;
+}
+.icon-circle-arrow-down {
+  display: inline-block;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  background: url(../img/icons/icon-circle-arrow-down.png ) no-repeat 0 0;
+}
+.page-section {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #222222 no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+.page-section__header {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.page-section__header:before {
+  content: '';
+  display: inline-block;
+  height: 150%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.section-header__wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: radial-gradient(circle farthest-side, rgba(0, 0, 0, 0.05) 100%, rgba(0, 0, 0, 0.2) 0%);
+}
+.section-header__wrapper:hover {
+  cursor: pointer;
+  background: radial-gradient(circle farthest-side, rgba(0, 0, 0, 0.2) 100%, rgba(0, 0, 0, 0.2) 0%);
+}
+.section-header__title {
+  margin-top: 0;
+  font-family: 'Roboto-Bold';
+  font-size: 0.7em;
+}
+.section-header__description {
+  font-family: 'Roboto-Light';
+  font-size: 0.45em;
+  opacity: 0.75;
+}
+.page-section__header {
+  font-size: 55px;
+}
+/*  ==========================================================================
+	Media queries
+	==========================================================================*/
+@media (min-width: 318px) {
+  .section-header__title {
+    font-size: 0.8em;
+  }
+  .section-header__description {
+    font-size: 0.55em;
+  }
+}
+@media (min-width: 400px) {
+  .section-header__title {
+    font-size: 0.8em;
+  }
+  .section-header__description {
+    font-size: 0.55em;
+  }
+}
+@media (min-width: 630px) {
+  .section-header__title {
+    font-size: 0.85em;
+  }
+  .section-header__description {
+    font-size: 0.60em;
+  }
+}
+@media (min-width: 768px) {
+  .section-header__title {
+    font-size: 0.9em;
+  }
+  .section-header__description {
+    font-size: 0.65em;
+  }
+}
+@media (min-width: 992px) {
+  .section-header__title {
+    font-size: 1em;
+  }
+  .section-header__description {
+    font-size: 0.65em;
+  }
+}
+@media (min-width: 1200px) {
+  .section-header__title {
+    font-size: 1em;
+  }
+  .section-header__description {
+    font-size: 0.65em;
+  }
+}
+.page-section.frontend-developer {
+  background-image: url('../img/header/frontend-developer-gradient.jpg');
+}
+.page-section.frontend-developer:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 100;
+  bottom: 45px;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
+  display: inline-block;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  background: url(../img/icons/icon-circle-arrow-down.png ) no-repeat 0 0;
+}
+.page-section.frontend-developer:after:hover {
+  cursor: pointer;
+  opacity: 1;
+  -webkit-animation: none;
+  animation: none;
+}
+.page-section.love-extreme {
+  background-color: #304458;
+  background-image: url('../img/header/love-extreme-gradient.jpg');
+}
