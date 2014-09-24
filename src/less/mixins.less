@@ -1,0 +1,85 @@
+/* --- MIXINS --- */
+
+.inlineblock {
+	/* --- mixin: .inlineblock: --- */
+	display: inline-block;
+	vertical-align: top;
+	
+	zoom: 1 !ie;
+	//display: inline !ie; // hmm. display: inline-block don't work if uncomment this code line. Something wrong! TODO: fix it
+	/* --- /.inlineblock: --- */
+}
+
+.clearfix {
+	/* --- mixin: .clearfix: --- */
+    *zoom: ~"expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif')";
+    zoom: 1 !ie;
+    
+    &:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	
+	&:after {
+		clear: both;
+	}
+	/* --- /.clearfix: --- */
+}
+
+.border-radius (@radius: 5px) {
+	/* --- mixin: .border-radius: --- */
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+	/* --- /.border-radius: --- */
+}
+
+.box-shadow (@string) {
+	/* --- mixin: .box-shadow: --- */
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+	/* --- /.box-shadow: --- */
+}
+
+.transition (@transition) {
+	/* --- mixin: .transition: --- */
+	-webkit-transition: @transition;
+	-moz-transition:    @transition;
+	-ms-transition:     @transition;
+	-o-transition:      @transition;
+	transition:      @transition;
+	/* --- /.transition: --- */
+}
+
+.opacity(@opacity: 1) {
+	/* --- mixin: .opacity: --- */
+	@ieOpacity: @opacity * 100;
+	filter: ~"alpha(opacity=@{ieOpacity})";
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
+	opacity: @opacity;
+	/* --- /.opacity: --- */
+}
+
+
+.placecolor(@color: #000000) {
+	/* --- mixin: .placecolor: --- */
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        color: @color;
+    }
+    &::-moz-placeholder {
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+	/* --- /.placecolor: --- */
+}
