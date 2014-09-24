@@ -56,6 +56,7 @@ gulp.task('build', ['processStyles', 'processHtml']);
 
 gulp.task('processHtml', processHtml);
 
+gulp.task('processScripts', processJs)
 gulp.task('processStyles', ['buildLess', 'processCss']); // async: first, build LESS files then process css
 gulp.task('buildLess', buildLess);
 gulp.task('processCss', ['buildLess'], processCss);
@@ -129,6 +130,20 @@ function processCss() {
 		//.pipe(connect.reload())
 		.pipe(notify('Styles processed!'))
 }
+
+function processJs() {
+	gulp.src([
+			'bower_components/jquery/dist/jquery.js',
+			'node_modules/jquery-mousewheel/jquery.mousewheel.js',
+			'assets/js/main.js'
+		]).pipe(plumber())
+		.pipe(uglify())
+		.pipe(concat('app.min.js'))
+		.pipe(header(banner, { pkg : pkg } ))
+		.pipe(gulp.dest('assets/js'))
+		//.pipe(connect.reload())
+		.pipe(notify('Scripts processed!'))
+};
 
 /* Copy only tasks */
 

@@ -1,0 +1,118 @@
+/*  ==========================================================================
+	General - Setting up some base styles
+	========================================================================== */
+
+body, html {
+    height: 100%;
+	max-height: 100%;
+    padding: 0px;
+    margin: 0px;
+	font-family: 'Roboto-Regular';
+	color: #ffffff;
+	font-size: 62.5%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.maincontent {
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	position: relative;
+	top: 0%;
+	-webkit-transition: top 1s;
+	-moz-transition: top 1s;
+	-ms-transition: top 1s;
+	-o-transition: top 1s;
+	transition: top 1s;
+}
+
+::-moz-selection {
+	background: #D6EDFF;
+}
+
+::selection {
+	background: #D6EDFF;
+}
+
+/* Clears */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+a {
+	color: #fff;
+	transition: color ease 0.3s;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+/*  ==========================================================================
+	Navigation
+	========================================================================== */
+
+.main-nav {
+	position: relative;
+	padding: 35px 40px;
+	margin: 0 0 30px 0;
+}
+
+.email-button {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	float: right;
+	height: 38px;
+	padding: 0 20px;
+	border: transparent 1px solid;
+	text-align: center;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 35px;
+	white-space: nowrap;
+	border-radius: 3px;
+	transition: all ease 0.3s;
+}
+.email-button:before {
+	font-size: 9px;
+	margin-right: 6px;
+}
+
+/* Special styles when overlaid on an image*/
+.main-nav.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 70px;
+	border: none;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+}
+
+.email-button {
+	border-color: #fff;
+}
+
+.main-nav.overlay a:hover {
+	color: #222;
+	border-color: rgba(255,255,255,0.8);
+	background: rgba(255,255,255,0.8);
+	transition: all 0.1s ease;
+}
