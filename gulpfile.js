@@ -135,7 +135,7 @@ function processJs() {
 	gulp.src([
 			'bower_components/jquery/dist/jquery.js',
 			'node_modules/jquery-mousewheel/jquery.mousewheel.js',
-			'assets/js/main.js'
+			'src/assets/js/main.js'
 		]).pipe(plumber())
 		.pipe(uglify())
 		.pipe(concat('app.min.js'))
