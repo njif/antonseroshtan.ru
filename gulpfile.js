@@ -52,7 +52,7 @@ gulp.task('makeAssets', makeAssets);
 gulp.task('clearAssets', ['makeAssets'], clearAssets);
 gulp.task('copyResources', ['clearAssets'], copyResources);
 
-gulp.task('build', ['processStyles', 'processHtml']);
+gulp.task('build', ['processStyles', 'processScripts', 'processHtml']);
 
 gulp.task('processHtml', processHtml);
 
