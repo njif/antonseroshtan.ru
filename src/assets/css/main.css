@@ -268,3 +268,8 @@ a:hover {
   background-color: #304458;
   background-image: url('../img/header/love-extreme-gradient.jpg');
 }
+@media (min-width: 318px) {
+  .page-section.love-extreme .section-header__description {
+    font-size: 0.4em;
+  }
+}
