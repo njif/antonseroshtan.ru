@@ -62,6 +62,7 @@ gulp.task('buildLess', buildLess);
 gulp.task('processCss', ['buildLess'], processCss);
 
 gulp.task('copyImages', copyImages);
+gulp.task('copyPdf', copyPdf);
 gulp.task('copyFonts', copyFonts);
 /*
 gulp.task('connectToserver', connectToserver);
@@ -90,6 +91,7 @@ function makeAssets() {
 
 function copyResources() {
 	copyImages();
+	copyPdf();
 	copyFonts();
 }
 
@@ -159,6 +161,13 @@ function copyImages() {
 		.pipe(plumber())
 		.pipe(gulp.dest('assets/img'))
 		.pipe(notify('Images copied!'));
+};
+
+function copyPdf() {
+	gulp.src('src/assets/pdf/**/*.*')
+		.pipe(plumber())
+		.pipe(gulp.dest('assets/pdf'))
+		.pipe(notify('Pdf copied!'));
 };
 
 function copyFonts() {
