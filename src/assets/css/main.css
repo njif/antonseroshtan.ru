@@ -159,6 +159,9 @@ a:hover {
   vertical-align: middle;
   margin-right: -0.25em;
 }
+.section__header__link {
+  display: inline-block;
+}
 .section-header__wrapper {
   position: relative;
   display: inline-block;
